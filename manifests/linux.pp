@@ -1,8 +1,8 @@
-class sealion::debian (
+class sealion::linux (
 $build  = hiera('sealion::build',$sealion::params::build)
 ) inherits sealion::params {
 
-  if str2bool("$sealion::debian::build") {
+  if str2bool("$sealion::linux::build") {
     include sealion::stage
   }
   else  {
