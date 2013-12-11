@@ -3,7 +3,7 @@ $build  = hiera('sealion::build',$sealion::params::build)
 ) inherits sealion::params {
 
   if str2bool("$sealion::debian::build") {
-    include staging
+    include sealion::stage
   }
   else  {
     package  {  'curl':
