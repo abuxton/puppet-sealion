@@ -1,11 +1,10 @@
-name    'abuxton-sealion'
+name    'digitaladept-sealion'
 version '0.1.0'
 source 'UNKNOWN'
-author 'abuxton'
+author 'digitaladept'
 license 'Apache License, Version 2.0'
-summary 'UNKNOWN'
-description 'UNKNOWN'
-project_page 'UNKNOWN'
+summary 'installer module for sealion.com agent application'
+description ''
+project_page 'https://github.com/abuxton/puppet-sealion'
 
 ## Add dependencies, if any:
-# dependency 'username/name', '>= 1.2.0'
