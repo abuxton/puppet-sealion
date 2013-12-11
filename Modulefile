@@ -1,4 +1,4 @@
-name    'sealion'
+name    'abuxton-sealion'
 version '0.1.0'
 source 'https://github.com/abuxton/puppet-sealion.git'
 author 'abuxton'
