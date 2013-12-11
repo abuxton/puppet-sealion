@@ -7,7 +7,14 @@
 # === Parameters
 #
 # See params.pp
-#
+# $key        = 'false' replace with your unique user key
+# $build      = 'false' true if you wish to build from source
+# $proxy      = 'false' true if you run behind proxy as docs
+# $proxy_url  = '' proxy url! 
+# $sealion_url= 'https://s3.amazonaws.com/sealion.com' source foler at tiem of writing
+# $64bit      = 'false' #control 64/32bit install controls whether 32bit or 64bit system install
+# $32bit_tar  = 'sealion-agent-package_i686.tar.gz' 
+# $64bit_tar  = 'sealion.com/sealion-agent-package_x86_64.tar.gz'
 #
 # === Variables
 #
@@ -16,22 +23,19 @@
 # [ proxy_url ] url to be used if behind a proxy
 #
 # === Examples
-#
-#  class { sealion:
-#
-#  }
+# include sealion
 #
 # === Authors
 #
-# Author Name abuxton@github, digitaladept
+#  abuxton
 #
 class sealion (
-  $key   =   hiera( 'sealion::key',$sealion::params::key  ),
+ $key   =   hiera( 'sealion::key',$sealion::params::key  ),
 ) inherits sealion::params {
-  if ($sealion::params::key != 'false'){
-    include sealion::install
-  }
-  else  {
-    fail("You have not set your unique sealion user key in params.pp") 
-  }
+ if ($sealion::params::key != 'false'){
+   include sealion::install
+ }
+ else  {
+   fail("You have not set your unique sealion user key in params.pp") 
+ }
 }
