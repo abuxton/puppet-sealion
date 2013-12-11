@@ -6,14 +6,14 @@
 #
 # === Parameters
 #
-# Document parameters here.
+# See params.pp
 #
 #
 # === Variables
 #
 # Here you should define a list of variables that this module would require.
-# [ sealion-key ]
-# the unique key defined by sealion in your user account. 
+# [ sealion-key ] the unique key defined by sealion in your user account. 
+# [ proxy_url ] url to be used if behind a proxy
 #
 # === Examples
 #
@@ -23,14 +23,10 @@
 #
 # === Authors
 #
-# Author Name <adam.buxton@puppetlabs.com>
-#
-# === Copyright
-#
-# Copyright 2013 Your name here, unless otherwise noted.
+# Author Name abuxton@github, digitaladept
 #
 class sealion (
-  $key   =   hiera( 'sealion::sealion-key',$sealion::params::key  ),
+  $key   =   hiera( 'sealion::key',$sealion::params::key  ),
 ) inherits sealion::params {
   if ($sealion::params::key != 'false'){
     include sealion::install
