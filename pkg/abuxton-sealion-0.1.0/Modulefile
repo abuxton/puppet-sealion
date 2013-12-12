@@ -8,3 +8,4 @@ description 'Linux process history monitoring tool from sealion.com, installs fr
 project_page 'https://github.com/abuxton/puppet-sealion'
 
 ## Add dependencies, if any:
+dependency 'nanliu/staging', '>= 0.3.1'

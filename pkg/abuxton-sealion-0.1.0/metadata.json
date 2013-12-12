@@ -8,13 +8,16 @@
   "description": "Linux process history monitoring tool from sealion.com, installs from curl ommand or source",
   "project_page": "https://github.com/abuxton/puppet-sealion",
   "dependencies": [
-
+    {
+      "name": "nanliu/staging",
+      "version_requirement": ">= 0.3.1"
+    }
   ],
   "types": [
 
   ],
   "checksums": {
-    "Modulefile": "b34630f94324dd3b689ba2041124d105",
+    "Modulefile": "62afc7f09eaeba044d43903398de5045",
     "README": "2aeeb356266f0731eb3b96dbc7c5dfe7",
     "README.md": "2817f961e308230554620a1a537b22b2",
     "files/proxy/proxy.json.erb": "5d4dd0ba3723219abf5912eb2bed589f",
