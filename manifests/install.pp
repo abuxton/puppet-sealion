@@ -3,11 +3,11 @@ class sealion::install (
 
   case $operatingsystem {
     'RedHat', 'CentOS'  :{
-      include redhat
+      include linux
 
     }
     /^(Debian|Ubuntu)$/ :{
-      include debian
+      include linux
     }
     default            :{
       fail("unsupported operating system")

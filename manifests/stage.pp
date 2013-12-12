@@ -6,26 +6,31 @@ class sealion::stage (
     ensure => directory,
   }
 
-  if str2bool($64bit) {
-    staging::file { "${sealion::params::64bit_tar}":
-      source => "${sealion::params::sealion_url}/${sealion::params::64bit_tar}",
-    } 
-    staging::extract { $sealion::params::64bit_tar:
-      target  => '/tmp/staging',
-      creates => '/tmp/staging/$sealion::params::64bit_tar',
-      require => Staging::File[$sealion::params::64bit_tar],
-      notify  => Exec['sealion Configure Makefile'],
+  case $architecture {
+    /_64$/: {
+      staging::file { "${sealion::params::64bit_tar}":
+        source => "${sealion::params::sealion_url}/${sealion::params::64bit_tar}",
+      } 
+      staging::extract { $sealion::params::64bit_tar:
+        target  => '/tmp/staging',
+        creates => '/tmp/staging/$sealion::params::64bit_tar',
+        require => Staging::File[$sealion::params::64bit_tar],
+        notify  => Exec['sealion Configure Makefile'],
+      }
     }
-  }
-  else  {
-    staging::file { "${sealion::params::32bit_tar}":
-      source => "${sealion::params::sealion_url}/${sealion::params::32bit_tar}"
-    } 
-    staging::extract { $sealion::params::32bit_tar:
-      target  => '/tmp/staging',
-      creates => '/tmp/staging/sealion-agent-package',
-      require => Staging::File[$sealion::params::32bit_tar],
-      notify  => Exec['sealion Configure Makefile'],
+    /86$/: {
+      staging::file { "${sealion::params::32bit_tar}":
+        source => "${sealion::params::sealion_url}/${sealion::params::32bit_tar}"
+      } 
+      staging::extract { $sealion::params::32bit_tar:
+        target  => '/tmp/staging',
+        creates => '/tmp/staging/sealion-agent-package',
+        require => Staging::File[$sealion::params::32bit_tar],
+        notify  => Exec['sealion Configure Makefile'],
+      }
+    }
+    default:  {
+     fail("unsupported architecture")
     }
   }
   package  { 'make':
