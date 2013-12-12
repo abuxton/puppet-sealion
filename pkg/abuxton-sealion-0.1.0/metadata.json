@@ -1,0 +1,31 @@
+{
+  "name": "abuxton-sealion",
+  "version": "0.1.0",
+  "source": "https://github.com/abuxton/puppet-sealion.git",
+  "author": "abuxton",
+  "license": "Apache License, Version 2.0",
+  "summary": "installer module for sealion.com agent application",
+  "description": "Linux process history monitoring tool from sealion.com, installs from curl ommand or source",
+  "project_page": "https://github.com/abuxton/puppet-sealion",
+  "dependencies": [
+
+  ],
+  "types": [
+
+  ],
+  "checksums": {
+    "Modulefile": "b34630f94324dd3b689ba2041124d105",
+    "README": "2aeeb356266f0731eb3b96dbc7c5dfe7",
+    "README.md": "2817f961e308230554620a1a537b22b2",
+    "files/proxy/proxy.json.erb": "5d4dd0ba3723219abf5912eb2bed589f",
+    "manifests/init.pp": "0a01a66edb72cd36902d6919131bf7c0",
+    "manifests/install.pp": "6bf1305a15bf658c047beeff4d366621",
+    "manifests/installproxy.pp": "81e4f2eecb3db2fd2faa17ba64aedc98",
+    "manifests/linux.pp": "2192dd2e34ba64d223222ba553cf8390",
+    "manifests/params.pp": "e8c238fc539b5b0eb5d4ef3a97bfbf4e",
+    "manifests/params.pp.ignore": "9f38e42bc67bd2e734d9992b34623536",
+    "manifests/stage.pp": "0c40e3ca2e57f86c5514a4f0e6968e53",
+    "spec/spec_helper.rb": "a55d1e6483344f8ec6963fcb2c220372",
+    "tests/init.pp": "f78e8883b67950ee204dc8f2015f5266"
+  }
+}
