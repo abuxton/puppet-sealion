@@ -1,4 +1,4 @@
-puppet-sealion
-===========i
+## puppet-sealion
 
-puppetised version of  the installer for https://sealion.com/
+
+Puppetised version of the installer for https://sealion.com/
